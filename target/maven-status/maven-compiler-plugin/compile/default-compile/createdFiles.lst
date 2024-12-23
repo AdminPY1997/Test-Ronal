@@ -1,0 +1,16 @@
+com\test_app_movil\controller\TransaccionController.class
+com\test_app_movil\config\SecurityConfig.class
+com\test_app_movil\service\ServicioService.class
+com\test_app_movil\controller\UsuarioController.class
+com\test_app_movil\service\TransaccionService.class
+com\test_app_movil\repository\TransaccionRepository.class
+SwaggerConfig.class
+com\test_app_movil\service\UsuarioService.class
+com\test_app_movil\repository\ServicioRepository.class
+com\test_app_movil\controller\ServicioController.class
+com\test_app_movil\controller\AuthController.class
+com\test_app_movil\model\Transaccion.class
+com\test_app_movil\model\Servicio.class
+com\test_app_movil\model\Usuario.class
+com\test_app_movil\Application.class
+com\test_app_movil\repository\UsuarioRepository.class
