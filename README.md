@@ -12,7 +12,28 @@ Asegúrate de tener instalados los siguientes componentes en tu sistema:
    - [Descargar e instalar PostgreSQL](https://www.postgresql.org/download/)
 4. **Docker** (opcional): Si deseas ejecutar la aplicación en un contenedor Docker.
    - [Descargar e instalar Docker](https://www.docker.com/products/docker-desktop)
+  
+# Pasos para Clonar, Construir y Ejecutar la Aplicación
 
+git clone https://github.com/tu_usuario/tu_repositorio.git
+cd tu_repositorio
+
+mvn clean install
+
+mvn spring-boot:run
+
+# Accede a la aplicación:
+
+La API estará disponible en http://localhost:8080.
+La documentación Swagger estará en http://localhost:8080/swagger-ui.html.
+
+# Ejecucion en Docker
+docker build -t test-app-movil .
+
+docker run -p 8080:8080 test-app-movil
+
+La API estará disponible en http://localhost:8080.
+La documentación Swagger estará en http://localhost:8080/swagger-ui.html.
 
 ## Configuración de la Base de Datos PostgreSQL
 
@@ -47,3 +68,4 @@ Asegúrate de tener instalados los siguientes componentes en tu sistema:
        referencia VARCHAR(100),
        fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
    );
+   
