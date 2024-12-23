@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "83983540-df2c-4f6a-b96d-2ae23c4ce54d",
+		"name": "Listar Servicios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40597842"
+	},
+	"item": [
+		{
+			"name": "Consultar Pagos por Tipo de Servicio",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/pagos/tipo-servicio?codigoServicio=TIGO001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pagos",
+						"tipo-servicio"
+					],
+					"query": [
+						{
+							"key": "codigoServicio",
+							"value": "TIGO001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pago de Servicio",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "c3be7551-b373-4608-b095-9dde49286457",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/pagos?usuarioId=5&codigoServicio=ANDE001&monto=150000&referencia=REF001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pagos"
+					],
+					"query": [
+						{
+							"key": "usuarioId",
+							"value": "5"
+						},
+						{
+							"key": "codigoServicio",
+							"value": "ANDE001"
+						},
+						{
+							"key": "monto",
+							"value": "150000"
+						},
+						{
+							"key": "referencia",
+							"value": "REF001"
+						}
+					]
+				},
+				"description": "PruebaPagos"
+			},
+			"response": []
+		},
+		{
+			"name": "Registro de Usuarios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Ronaldo Gonzalez\",\r\n    \"email\": \"rgonzalezleite@gmail.com\",\r\n    \"documento\": \"4589691\",\r\n    \"saldo\": \"500000\",\r\n    \"password\": \"admin123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/usuarios/registro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"usuarios",
+						"registro"
+					]
+				},
+				"description": "Registro de Usuarios"
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Servicios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/servicios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"servicios"
+					]
+				},
+				"description": "Listar Servicios"
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Pagos por Rango de Fechas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/pagos/rango-fechas?fechaInicio=2024-01-01T00:00:00&fechaFin=2024-12-31T23:59:59",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"pagos",
+						"rango-fechas"
+					],
+					"query": [
+						{
+							"key": "fechaInicio",
+							"value": "2024-01-01T00:00:00"
+						},
+						{
+							"key": "fechaFin",
+							"value": "2024-12-31T23:59:59"
+						}
+					]
+				},
+				"description": "Consultar Pagos por Rango de Fechas"
+			},
+			"response": []
+		}
+	]
+}
