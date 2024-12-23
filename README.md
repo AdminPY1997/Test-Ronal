@@ -1,13 +1,49 @@
-# Test App Movil - Pago de Servicios
+# Test App Móvil - Backend Pago de Servicios
 
-Este proyecto es una API para la gestión de pagos de servicios, desarrollada en Spring Boot.
+## Requisitos Previos
 
-## Endpoints principales
-- `/api/usuarios/registro` - Registrar usuarios.
-- `/api/auth/login` - Autenticación de usuarios.
-- `/api/pagos` - Gestión de pagos.
+Asegúrate de tener instalados los siguientes componentes en tu sistema:
 
-## Configuración
-1. Instalar dependencias con Maven.
-2. Configurar la base de datos en `application.properties`.
-3. Ejecutar la aplicación con `mvn spring-boot:run`.
+1. **Java**: Versión 17 o superior.
+   - [Descargar e instalar Java](https://www.oracle.com/java/technologies/javase-downloads.html)
+2. **Maven**: Versión 3.8.0 o superior.
+   - [Descargar e instalar Maven](https://maven.apache.org/install.html)
+3. **PostgreSQL**: Versión 13 o superior.
+   - [Descargar e instalar PostgreSQL](https://www.postgresql.org/download/)
+4. **Docker** (opcional): Si deseas ejecutar la aplicación en un contenedor Docker.
+   - [Descargar e instalar Docker](https://www.docker.com/products/docker-desktop)
+
+
+## Configuración de la Base de Datos PostgreSQL
+
+1. **Crea una base de datos en PostgreSQL**:
+   - Nombre de la base de datos: `test_app_movil`
+   - Usuario: `postgres`
+   - Contraseña: `postgres`
+
+2. **Ejecuta el siguiente script SQL para crear las tablas requeridas**:
+   ```sql
+   CREATE TABLE usuarios (
+       id SERIAL PRIMARY KEY,
+       nombre VARCHAR(100) NOT NULL,
+       email VARCHAR(100) UNIQUE NOT NULL,
+       documento VARCHAR(50) NOT NULL,
+       saldo NUMERIC(10, 2) NOT NULL,
+       password VARCHAR(255) NOT NULL
+   );
+
+   CREATE TABLE servicios (
+       id SERIAL PRIMARY KEY,
+       nombre VARCHAR(100) NOT NULL,
+       codigo VARCHAR(50) UNIQUE NOT NULL,
+       deuda NUMERIC(10, 2) NOT NULL
+   );
+
+   CREATE TABLE transacciones (
+       id SERIAL PRIMARY KEY,
+       usuario_id INTEGER REFERENCES usuarios(id),
+       servicio_id INTEGER REFERENCES servicios(id),
+       monto NUMERIC(10, 2) NOT NULL,
+       referencia VARCHAR(100),
+       fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+   );
